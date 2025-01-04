@@ -1,0 +1,58 @@
+<div class="header">
+  <h1 class="page-header">
+    All Product Report
+  </h1>
+</div>
+<div id="page-inner">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Advanced Tables -->
+      <div class="card">
+        <div class="card-content">
+          <h2 class="h2_form">Product Report</h2>
+          <div style="margin: 15px; display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 14px; font-weight: bold; text-align: left;">
+                  Select Page
+                </span>
+                <span>
+                  <select style="height: 40px; width: 150px;" type="text" class="form-control" (change)="onChange($event)">
+                    <option value="{{i}}" *ngFor="let number of numbers; let i = index">Page {{i+1}}</option>
+                  </select>
+                </span>
+          </div>
+          
+          <div class="table-responsive">
+            <table class="table table-striped table-hover" style="font-size: 13px;">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Product ID</th>
+                  <th>Title</th>
+                  <th>Category ID</th>
+                  <th>Category Name</th>
+                  <th>Price Per Item</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor='let product of product'>
+                  <td>{{product.product_id}}</td>
+                  <td>{{product.product_title}}</td>
+                  <td>{{product.category_id}}</td>
+                  <td>{{product.category_name}}</td>
+                  <td>{{product.product_price_per_item}}.00/-</td>
+                  <td>
+                    <a class="btn btn-sm btn-primary glyphicon glyphicon-edit" style="padding: 5px; font-size: 16px;" href="/updateProduct/{{product.product_id}}"></a>&nbsp;
+                    <button class="btn btn-sm btn-danger glyphicon glyphicon-trash" (click)="delete(product.product_id)" style="padding: 5px; font-size: 16px;"></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="font-size: 14px; color: red; font-weight: bold; text-align: left;">
+              Total Records : {{total_records}} Showing {{record_per_page}} records per page
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
