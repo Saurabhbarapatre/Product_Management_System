@@ -29,7 +29,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProducts(0);
-    this.getTotalCount();
+    this.getTotalCount()
   }
 
 
