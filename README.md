@@ -8,5 +8,5 @@ STEP 2- Open client folder in a Integrated terminal and run the command "ng serv
 
 STEP 3- Start Apache and mysql from xamp
 
-THANK YOU!!
+THANK YOU! !
 
